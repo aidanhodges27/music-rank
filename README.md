@@ -1,8 +1,6 @@
-# React + Vite
+**Music Rank**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a music-ranking tool that will help users find new recommendations similar to what they already listen to, ranking based on genre and other factors. The tool was created using Vite, Firebase, and React.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Contributors:**
+Aidan, Ted, Spencer, Derek
