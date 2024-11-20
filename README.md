@@ -1,6 +1,6 @@
 **Music Rank**
 
-This is a music-ranking tool that will help users find new recommendations similar to what they already listen to, ranking based on genre and other factors. The tool was created using Vite, Firebase, and React.
+This is a music-ranking tool similar to the movie tool Lettrboxd that allows users to share their musical preferences and rankings, along with statistics about their choices. (genres, artists, etc.)
 
 **Contributors:**
 Aidan, Ted, Spencer, Derek
