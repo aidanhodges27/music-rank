@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react"
-import Nav from "./Nav"
-import Article from "./Article"
-import ArticleEntry from "./ArticleEntry"
 import { SignIn, SignOut } from "./Auth"
 import { useAuthentication } from "../services/authService"
 import { fetchArticles, createArticle } from "../services/articleService"
@@ -36,20 +33,9 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        Blog
-        {user && <button onClick={() => setWriting(true)}>New Article</button>}
-        {!user ? <SignIn /> : <SignOut />}
+        Music Rank
       </header>
 
-      {!user ? "" : <Nav articles={articles} setArticle={setArticle} />}
-
-      {!user ? (
-        ""
-      ) : writing ? (
-        <ArticleEntry addArticle={addArticle} />
-      ) : (
-        <Article article={article} />
-      )}
     </div>
   )
 }
