@@ -35,6 +35,11 @@ export default function App() {
       <header>
         Music Rank
       </header>
+      <body>
+        <div className="auth">
+          {user ? <SignOut /> : <SignIn />}
+        </div>
+      </body>
 
     </div>
   )
