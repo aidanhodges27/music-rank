@@ -53,9 +53,6 @@ export default function App() {
         Music Rank
       </header>
       <main>
-        <div className = "Genre">
-          <button>Genre</button>
-        </div>
         <div className = "Ranking">
           <button>Ranking</button>
         </div>

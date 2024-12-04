@@ -1,9 +1,9 @@
-export async function fetchDeezerData(query) {
+export async function fetchDeezerData(searchTerm) {
   if (!searchTerm) {
     return [];
   }
   const baseUrl = "https://api.deezer.com/search";
-  return fetch('${baseUrl}?q=${searchTerm}')
+  return fetch(`${baseUrl}?i=${encodeURIComponent(searchTerm)}`)
     .then((response) => response.json())
     .then((data) => data.data || []);
 }
