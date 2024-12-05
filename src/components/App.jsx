@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-import { SignIn, SignOut } from "./Auth"
 import { useAuthentication } from "../services/authService"
 import Search from "./Search"
 import "./App.css"
-import { fetchNameandArtist, fetchDeezerData, fetchDeezerById } from "../services/DeezerSearch"
+import { fetchItunesData, fetchItunesById, fetchNameandArtist } from "../services/searchService"
+import SongList from "./SongList"
+import Header from "./Header"
 
 export default function App() {
   const user = useAuthentication()
@@ -11,17 +12,16 @@ export default function App() {
   const [songs, setSongs] = useState([]);
   const [songId, setSongId] = useState(null);
   const [song, setSong] = useState(null);
-  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     setSong(null);
-    fetchDeezerData(searchTerm).then(setSongs);
+    fetchItunesData(searchTerm).then(setSongs);
   }, [searchTerm]);
 
   useEffect(() => {
     setSearchTerm("");
     if (songId) {
-      fetchDeezerData(songId).then(setSong);
+      fetchItunesById(songId).then(setSong);
     }
   }, [songId]);
 
@@ -49,21 +49,15 @@ export default function App() {
 
   return (
     <div className="App">
-      <header>
-        Music Rank
-      </header>
-      <main>
-        <div className = "Ranking">
-          <button>Ranking</button>
-        </div>
-        <div className="auth">
-          {user ? <SignOut /> : <SignIn />}
-        </div>
-        <div className="Search">
-          <Search />
-        </div>
+      <Header action={startOver} user={user}></Header>
+        <button onClick={showFavorites}>Favorites</button>
+        <Search action={setSearchTerm}/>
+        {song ? (
+          <Song song={song} user={user} />
+        ) : (
+          <SongList song={songs} action={setSongId} />
+        )}
         
-      </main>
     </div>
   )
 }
