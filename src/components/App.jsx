@@ -20,16 +20,14 @@ export default function App() {
 
   useEffect(() => {
     setSearchTerm("");
-    if (songId) {
-      fetchItunesById(songId).then(setSong);
-    }
+    if (songId) fetchItunesById(songId).then(setSong);
   }, [songId]);
 
   function startOver() {
-    setRecipeId(null);
-    setRecipe(null);
+    setSongs(null);
+    setSong(null);
     setSearchTerm("");
-    setRecipes([]);
+    setSongId([]);
   }
 
   async function showFavorites() {
@@ -50,14 +48,13 @@ export default function App() {
   return (
     <div className="App">
       <Header action={startOver} user={user}></Header>
-        <button onClick={showFavorites}>Favorites</button>
-        <Search action={setSearchTerm}/>
-        {song ? (
-          <Song song={song} user={user} />
-        ) : (
-          <SongList song={songs} action={setSongId} />
-        )}
-        
+      <button onClick={showFavorites}>Favorites</button>
+      <Search action={setSearchTerm}/>
+      {song ? (
+        <Song song={song} user={user} />
+      ) : (
+        <SongList songs={songs} action={(id) => setSongId(id)} />
+      )}   
     </div>
   )
 }

@@ -25,6 +25,9 @@ export async function fetchNameandArtist(id) {
   const baseUrl = "https://itunes.apple.com/search/lookup";
   return fetch(`${baseUrl}?q=${encodeURIComponent(id)}`)
     .then((response) => response.json())
-    .then((data) => [data.data[0].strSong, data.data[0].strArtist]);
+    .then((data) => {
+      const song = data.results[0];
+      return song ? [song.trackName, song.artistName] : [];
+    });
 }
 
