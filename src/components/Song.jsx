@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { login } from '../services/authService';
-import {saveFavorite} from '../services/favoriteService';
+import {saveFavorite} from '../services/favoritesService';
 
 export default function Song({ song, user }) {
     const [favorite, setFavorite] = useState(false);
@@ -12,6 +12,7 @@ export default function Song({ song, user }) {
         setFavorite(true);
     }
 
+    
     return (
         <section id="song">
             <h2>{song.trackName}</h2>
@@ -30,7 +31,7 @@ export default function Song({ song, user }) {
             ) : saving ? (
                 <button disabled>...</button>
             ) : (
-                <button onClick={addFavorite}>Add to <Favorites></Favorites></button>
+                <button onClick={addFavorite}>Add to </button>
             )}
         </section>
     );

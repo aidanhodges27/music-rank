@@ -5,6 +5,8 @@ import "./App.css"
 import { fetchItunesData, fetchItunesById, fetchNameandArtist } from "../services/searchService"
 import SongList from "./SongList"
 import Header from "./Header"
+import Song from "./Song"
+import { fetchFavorites } from "../services/favoritesService"
 
 export default function App() {
   const user = useAuthentication()
@@ -53,7 +55,7 @@ export default function App() {
       {song ? (
         <Song song={song} user={user} />
       ) : (
-        <SongList songs={songs} action={(id) => setSongId(id)} />
+        <SongList songs={songs || []} action={(id) => setSongId(id)} />
       )}   
     </div>
   )

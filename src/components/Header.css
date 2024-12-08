@@ -1,0 +1,18 @@
+header {
+    font-family: Impact;
+    padding: 20px;
+    margin-top: 0;
+    border: 0;
+    background-color: #5E5DF0;
+    color: white;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 1em;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}

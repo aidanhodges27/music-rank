@@ -1,0 +1,55 @@
+
+section#searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    padding-top: 20px;
+}
+
+article img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+article {
+    height: 300px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+	margin: 10px 5px;
+	padding: 5px;
+	background-color: #333333;
+	color: white;
+    font-size: 12px;
+}
+
+article p {
+    font-size: 1rem;
+    margin: 4px 0; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow: hidden; 
+}
+
+article h2 {
+    font-size: 1.2rem; 
+    margin: 8px 0;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    max-width: 100%; 
+}
+
+article button {
+    margin-top: 8px;
+    padding: 8px 12px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    width: auto;
+    height: 50px;
+}
