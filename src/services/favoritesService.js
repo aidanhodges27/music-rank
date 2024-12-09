@@ -11,7 +11,7 @@ export async function saveFavorite(song, user) {
 
 export async function fetchFavorites(user) {
     const snapshot = await getDocs(
-        query(collection(db, "favorites"), where("userId", "==", loggedInUserId()))
+        query(collection(db, "favorites"), where("user_id", "==", loggedInUserId()))
     );
 return snapshot.docs.map((doc) => ({
     id: doc.id,
@@ -19,5 +19,3 @@ return snapshot.docs.map((doc) => ({
     track_id: doc.data().song_id,
 }));
 }
-
-
