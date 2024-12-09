@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Search.css';
 
 export default function Search({ action }) {
   const [term, setTerm] = useState("");
@@ -11,15 +12,13 @@ export default function Search({ action }) {
 
   return (
     <form onSubmit={submit}>
-      <div class="fx fx-gap">
+      <div className="fx fx-gap">
         <div>
           <input
           type="text"
           placeholder="Search for song or artist"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          name
-          required
         />
         </div>
         <div id="search-icon">

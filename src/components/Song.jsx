@@ -2,17 +2,7 @@ import { useState } from 'react';
 import { login } from '../services/authService';
 import {saveFavorite} from '../services/favoritesService';
 
-export default function Song({ song, user }) {
-    const [favorite, setFavorite] = useState(false);
-    const [saving, setSaving] = useState(false);
-
-    async function addFavorite() {
-        setSaving(true);
-        await saveFavorite(song, user);
-        setFavorite(true);
-    }
-
-    
+export default function Song({ song}) {  
     return (
         <section id="song">
             <h2>{song.trackName}</h2>
@@ -24,7 +14,6 @@ export default function Song({ song, user }) {
                         <li key={key}>{value}</li>
                     ))}
             </ul>
-            
         </section>
     );
 }

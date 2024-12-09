@@ -35,9 +35,10 @@ export default function App() {
   async function showFavorites() {
     fetchFavorites().then(async (songs) => {
       for (let r of songs) {
-        let [name, artist] = await fetchNameandArtist(r.id);
-        r.strArtist = song.artistName;
-        r.strSong = song.trackName;
+        let [name, artist, thumb] = await fetchNameandArtist(r.id);
+        r.artworkUrl100 = thumb;
+        r.trackName = name;
+        r.artistName = artist;
       }
       setSongs(songs);
       });
@@ -46,7 +47,7 @@ export default function App() {
   return (
     <div className="App">
       <Header action={startOver} user={user}></Header>
-      <button onClick={showFavorites}>Favorites</button>
+      <button className='favorite' onClick={showFavorites}>Favorites</button>
       <Search action={setSearchTerm}/>
       {song ? (
         <Song song={song} user={user} />

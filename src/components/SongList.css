@@ -2,8 +2,8 @@
 section#searchResults {
     display: flex;
     flex-wrap: wrap;
-    flex: 0 1 auto;
-    padding-top: 10%;
+    flex: auto 1 auto;
+    justify-content: center;
 }
 
 article img {
@@ -44,7 +44,9 @@ article h2 {
     max-width: 100%; 
 }
 
-article button {
+section#searchResults article button {
+    background-color: #5E5DF0;
+    color: white;
     margin-top: 8px;
     padding: 8px 12px; 
     border: none; 
