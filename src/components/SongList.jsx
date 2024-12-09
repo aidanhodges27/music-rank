@@ -1,5 +1,4 @@
 import "./SongList.css";
-import { saveFavorite } from "../services/favoritesService";
 
 export default function SongList({ songs, action }) {
     return (

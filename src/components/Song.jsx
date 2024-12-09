@@ -24,15 +24,7 @@ export default function Song({ song, user }) {
                         <li key={key}>{value}</li>
                     ))}
             </ul>
-            {!user ? (
-                <button onClick={login}>Sign In to Add to Favorites</button>
-            ) : favorite ? (
-                <button disabled>Added to Favorites!</button>
-            ) : saving ? (
-                <button disabled>...</button>
-            ) : (
-                <button onClick={addFavorite}>Add to </button>
-            )}
+            
         </section>
     );
 }

@@ -15,6 +15,10 @@ export function loggedInUserDisplayName() {
 }
 
 export function loggedInUserId() {
+  const user = auth.currentUser; 
+    if (!user) {
+        throw new Error("No user is currently logged in.");
+    }
   return auth.currentUser.uid;
 }
 

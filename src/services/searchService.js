@@ -27,7 +27,7 @@ export async function fetchNameandArtist(id) {
     .then((response) => response.json())
     .then((data) => {
       const song = data.results[0];
-      return song ? [song.trackName, song.artistName] : [];
+      return song ? [song.trackName, song.artistName, song.trackId] : [];
     });
 }
 

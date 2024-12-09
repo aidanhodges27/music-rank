@@ -33,15 +33,11 @@ export default function App() {
   }
 
   async function showFavorites() {
-    setSongId(null);
-    setSong([]);
-    setSongs([]);
-    setSearchTerm("");
     fetchFavorites().then(async (songs) => {
       for (let r of songs) {
         let [name, artist] = await fetchNameandArtist(r.id);
-        r.strArtist = artist;
-        r.strSong = name;
+        r.strArtist = song.artistName;
+        r.strSong = song.trackName;
       }
       setSongs(songs);
       });
