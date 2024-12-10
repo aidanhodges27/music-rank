@@ -52,7 +52,7 @@ export default function App() {
       {song ? (
         <Song song={song} user={user} />
       ) : (
-        <SongList songs={songs || []} action={(id) => setSongId(id)} />
+        <SongList songs={songs || []} action={(id) => setSongId(id)} user={user} />
       )}   
     </div>
   )

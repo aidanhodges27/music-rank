@@ -5,7 +5,7 @@ import { loggedInUserId } from "./authService";
 export async function saveFavorite(song, user) {
     const track_id = song.trackId;
     const user_id = user.uid;
-    const key = `${user_id}_${track_id}`;
+    const key = `LpEERDmHsuuQOO5zNzCn`;
     await setDoc(doc(db, "favorites", key), { track_id, user_id });
 }
 
