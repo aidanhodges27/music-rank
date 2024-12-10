@@ -1,6 +1,5 @@
 import { db } from "../firebaseConfig";
-import { addDoc, collection } from "firebase/firestore";
-import { doc, setDoc, getDocs, query, collection, limit, where } from "firebase/firestore";
+import { addDoc, getDocs, query, collection, where } from "firebase/firestore";
 import { loggedInUserId } from "./authService";
 
 export async function saveFavorite(song, user) {
