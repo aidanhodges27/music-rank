@@ -13,7 +13,7 @@ export async function fetchItunesById(id) {
     return {};
   }
   const baseUrl = "https://itunes.apple.com/search/lookup";
-  return fetch(`${baseUrl}?term=${encodeURIComponent(id)}`)
+  return fetch(`${baseUrl}?id=${encodeURIComponent(id)}`)
     .then((response) => response.json())
     .then((data) => data.results[0] || {});
 }
@@ -23,7 +23,7 @@ export async function fetchNameandArtist(id) {
     return [];
   }
   const baseUrl = "https://itunes.apple.com/search/lookup";
-  return fetch(`${baseUrl}?term=${encodeURIComponent(id)}`)
+  return fetch(`${baseUrl}?id=${encodeURIComponent(id)}`)
     .then((response) => response.json())
     .then((data) => {
       const song = data.results[0];
@@ -31,3 +31,16 @@ export async function fetchNameandArtist(id) {
     });
 }
 
+export async function fetchNameAndUrl(id){
+  const baseUrl = "https://itunes.apple.com/lookup";
+  return fetch(`${baseUrl}?id=${encodeURIComponent(id)}`)
+    .then((response) => response.json())
+    .then(data => {
+      if (data.results && data.results.length > 0) {
+        const song = data.results[0];
+        return [song.trackName, song.artistName, song.artworkUrl100];
+      } else {
+        return ["", "", ""];
+      }
+    });
+}
